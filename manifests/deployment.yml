@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "daprclac"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "daprclac"
+    spec:
+      containers:
+        - name: "daprclac"
+          image: "daprcalc.azurecr.io/daprclac"
+          ports:
+          - containerPort: 3000
