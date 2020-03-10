@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "daprclac"
+    labels:
+        app: "daprclac"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: daprclaca53a-daprclac.08cb730c5a0a48c6bece.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "daprclac"
+                servicePort: 3000
